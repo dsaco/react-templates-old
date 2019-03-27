@@ -1,10 +1,11 @@
+const path = require('path');
+
 const merge = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const baseConfig = require('./webpack.config.base');
-const { outputPath } = require('./config');
 
 module.exports = merge(baseConfig, {
     mode: 'production',
@@ -32,8 +33,8 @@ module.exports = merge(baseConfig, {
         ]
     },
     output: {
-        filename: '[name].[chunkhash].js',
-        path: outputPath,
+        filename: 'scripts/[name].[chunkhash:8].js',
+        path: path.resolve(__dirname, '../dist'),
         // publicPath: '/'
     },  
     optimization: {
@@ -44,7 +45,7 @@ module.exports = merge(baseConfig, {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].[chunkhash].css',
+            filename: 'styles/[name].[chunkhash:8].css',
         })
     ],
 });

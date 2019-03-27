@@ -1,9 +1,9 @@
+const path = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const { entry, htmlPath, babelPlugins } = require('./config');
-
 module.exports = {
-    entry,
+    entry: path.resolve(__dirname, '../src/main.jsx'),
     resolve: {
         extensions: ['.js', '.jsx', '.json'],
     },
@@ -19,7 +19,13 @@ module.exports = {
                             '@babel/preset-env',
                             '@babel/preset-react',
                         ],
-                        plugins: babelPlugins,
+                        plugins: [
+                            ['@babel/plugin-proposal-decorators', { legacy: true }],
+                            ['@babel/plugin-proposal-class-properties', { loose: true }],
+                            '@babel/plugin-syntax-dynamic-import',
+                            '@babel/plugin-transform-runtime',
+                            'react-hot-loader/babel',
+                        ],
                     },
                 },
                 exclude: /node_modules/,
@@ -28,7 +34,7 @@ module.exports = {
     },  
     plugins: [
         new HtmlWebpackPlugin({
-            template: htmlPath,
+            template: path.resolve(__dirname, '../src/index.html'),
         })
     ]
 }

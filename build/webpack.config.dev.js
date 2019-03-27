@@ -31,6 +31,7 @@ module.exports = merge(baseConfig, {
     devServer: {
         hot: true,
         port,
+        open: true,
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
