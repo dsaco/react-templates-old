@@ -1,7 +1,7 @@
 const path = require('path');
 
 const merge = require('webpack-merge');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
@@ -30,7 +30,7 @@ module.exports = merge(baseConfig, {
                     'sass-loader',
                 ],
             },
-        ]
+        ],
     },
     output: {
         filename: 'scripts/[name].[chunkhash:8].js',
@@ -39,7 +39,7 @@ module.exports = merge(baseConfig, {
     },  
     optimization: {
         minimizer: [
-            new UglifyJsPlugin({}),
+            new TerserPlugin(),
             new OptimizeCSSAssetsPlugin({})
         ]
     },
