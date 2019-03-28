@@ -29,6 +29,7 @@
     "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.2.3",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
@@ -36,9 +37,12 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "mobx": "^5.9.0",
+    "mobx-react": "^5.4.3",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-hot-loader": "^4.8.0",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "superagent": "^4.1.0"
   }
 }
