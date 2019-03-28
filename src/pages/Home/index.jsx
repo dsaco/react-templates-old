@@ -1,3 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default () => <h2>Home</h2>
+import Home from './Home';
+import { fetchList } from '../../stores/actions/homeAction';
+
+const mapStateToProps = state => {
+    return {
+        list: state.home.list,
+    }
+};
+
+const mapDispatchToProps = {
+    fetchList,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
