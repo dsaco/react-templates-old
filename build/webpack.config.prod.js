@@ -30,7 +30,7 @@ module.exports = merge(baseConfig, {
                     'sass-loader',
                 ],
             },
-        ]
+        ],
     },
     output: {
         filename: 'scripts/[name].[chunkhash:8].js',

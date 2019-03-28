@@ -25,7 +25,7 @@ module.exports = merge(baseConfig, {
                     },  
                     'sass-loader',
                 ],
-            }
+            },
         ],
     },  
     devServer: {
