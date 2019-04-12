@@ -6,6 +6,10 @@ module.exports = {
     entry: path.resolve(__dirname, '../src/main.jsx'),
     resolve: {
         extensions: ['.js', '.jsx', '.json'],
+        alias: {
+            Components: path.resolve(__dirname, '../src/components/'),
+            Assets: path.resolve(__dirname, '../src/assets/'),
+        },
     },
     module: {
         rules: [

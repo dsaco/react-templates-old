@@ -1,3 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default () => <h3 className="red">About</h3>
+import Button from 'Components/Button';
+
+export default class About extends Component {
+    render() {
+        return (
+            <div>
+                <h3 className="red">About</h3>
+                <Button>btn</Button>
+            </div>
+        )
+    }
+}
