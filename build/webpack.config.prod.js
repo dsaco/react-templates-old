@@ -30,6 +30,10 @@ module.exports = merge(baseConfig, {
                     'sass-loader',
                 ],
             },
+            {
+                test:/\.(gif|jpg|png)$/,
+                use:'file-loader?name=images/[name].[ext]'
+            },
         ],
     },
     output: {

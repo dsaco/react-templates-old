@@ -1,3 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default () => <h2>Home</h2>
+// const src = require('Assets/test.jpg');
+import src from 'Assets/test.jpg';
+
+export default class extends Component {
+    render() {
+        return (
+            <div>
+                <h2>Home</h2>
+                <img src={src} />
+            </div>
+        )
+    }
+}
