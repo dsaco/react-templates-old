@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import src from 'Assets/test.jpg';
+
 export default class Home extends Component {
     componentDidMount() {
         this.props.fetchList();
@@ -16,6 +18,7 @@ export default class Home extends Component {
                         )
                     })
                 }
+                <img src={src} />
             </div>
         );
     }
